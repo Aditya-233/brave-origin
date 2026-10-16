@@ -107,7 +107,7 @@ Comment[zh_HK]=連線到網際網路
 Comment[zh_TW]=連線到網際網路
 StartupNotify=true
 StartupWMClass=brave-origin
-Exec=brave-origin %U
+Exec=brave-origin-bin %U
 Terminal=false
 Icon=brave-origin
 Type=Application
@@ -167,7 +167,7 @@ Name[uk]=Нове вікно
 Name[vi]=Cửa sổ Mới
 Name[zh_CN]=新建窗口
 Name[zh_TW]=開新視窗
-Exec=brave-origin
+Exec=brave-origin-bin
 
 [Desktop Action new-private-window]
 Name=New Incognito Window
@@ -219,4 +219,4 @@ Name[uk]=Нове вікно в режимі анонімного перегля
 Name[vi]=Cửa sổ ẩn danh mới
 Name[zh_CN]=新建隐身窗口
 Name[zh_TW]=新增無痕式視窗
-Exec=brave-origin --incognito
+Exec=brave-origin-bin --incognito
