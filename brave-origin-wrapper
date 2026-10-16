@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-"${HOME}/.config"}"
+CONF_FILE="${XDG_CONFIG_HOME}/brave-origin-flags.conf"
+
+FLAG_LIST=()
+
+if [[ -f "${CONF_FILE}" ]]; then
+    while IFS= read -r line || [[ -n "${line}" ]]; do
+        [[ "${line}" =~ ^[[:space:]]*(#|$) ]] && continue
+        FLAG_LIST+=("${line}")
+    done < "${CONF_FILE}"
+fi
+
+export CHROME_VERSION_EXTRA='stable'
+
+exec /opt/brave-origin-bin/brave-origin "${FLAG_LIST[@]}" "$@"
